@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body style="background-image:url({% static 'bgimg.webp' %});background-size: cover;text-align: center;">
+
+<h1> Registration Form</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+   Username: <input type="text" name="username"><br>
+   First Name:<input type="text" name="first_name"><br>
+   Last Name:<input type="text" name="last_name"><br>
+   Email:<input type="email" name="email"><br>
+   Password:<input type="password" name="pass1"><br>
+   Confirm Password: <input type="password" name="pass2"><br><br>
+    <input type="submit">
+</form>
+{% for i in messages %}
+ {{i}}
+{% endfor %}
+</body>
+</html>
